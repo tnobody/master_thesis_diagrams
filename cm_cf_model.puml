@@ -1,0 +1,31 @@
+@startuml
+
+class Ticket {
+}
+
+class GroupDefinition {
+    + name: String
+}
+
+class Customer {
+}
+
+class GroupField {
+    + type: String
+    + value: String
+}
+
+class Group {
+}
+
+Ticket "1" -- "0..*" Group
+
+Customer "1" -- "0..*" Group
+
+Group "1" -- "0..*" GroupField
+
+GroupField "1" -- "0..*" GroupField : childField
+
+Group "1" -- "1" GroupDefinition
+
+@enduml
